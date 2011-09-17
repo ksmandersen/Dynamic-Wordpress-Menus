@@ -2,7 +2,10 @@
 This simple plugin for Wordpress enables you to select a menu for a 
 single page from within the admin interface in Wordpress.
 
-*Notice:* This plugin relies on the [Meta Box Script for Wordpress](http://www.deluxeblogtips.com/meta-box-script-for-wordpress/) by [RILWIS](http://www.deluxeblogtips.com/)
+*Notice:* This plugin relies on the 
+[Meta Box Script for Wordpress](http://www.deluxeblogtips.com/meta-box-script-for-wordpress/) by 
+[RILWIS](http://www.deluxeblogtips.com/) which you can download for free 
+[here](http://www.deluxeblogtips.com/meta-box-script-for-wordpress/).
 
 ## Usage
 
