@@ -8,8 +8,11 @@ Version: 1.0
 Author URI: http://github.com/ksmandersen
 */
 
+// Require the Meta Box Script Class by RILWIS
+// http://www.deluxeblogtips.com/meta-box-script-for-wordpress/
 require_once 'meta-box.php';
 
+// Get the available menu's registed in Wordpress Menu interface
 function get_menus(){
     $r = array(-1 => "");
     $menus = wp_get_nav_menus();
@@ -22,8 +25,9 @@ function get_menus(){
     return $r;
 }
 
+// Register meta box for page
 function page_meta() {
-	$meta_boxes[] = array(
+	$meta_box = array(
 		'id'			=> 'dpm_page-menu',
 		'title'		=> 'Page Menu',
 		'pages'		=> array('page'),
@@ -38,11 +42,11 @@ function page_meta() {
 		)
 	);
 	
-	foreach($meta_boxes as $meta_box) {
-    $my_box = new RW_Meta_Box($meta_box);
-  }
+  new RW_Meta_Box($meta_box);
 }
-	
+
+// If currently displaying admin interface then register the meta box
+// TODO: Only display when creating / editing a page.	
 if(is_admin())
 	page_meta();
 
