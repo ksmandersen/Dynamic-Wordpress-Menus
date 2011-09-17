@@ -16,7 +16,7 @@ When activating the plugin a meta box will apear whenever editing a page like so
 You can then access the set menu in your theme like so:
 
 	// Get the ID of the set menu
-	$menu_id = get_post_meta($post->ID, 'te_page-menu-id', true);
+	$menu_id = get_post_meta($post->ID, 'dpm_page-menu-id', true);
 	
 	// print the menu
 	wp_nav_menu(array('menu' => $menu_id));
