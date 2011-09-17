@@ -2,10 +2,10 @@
 
 /*
 Plugin Name: Dynamic Page Menus
-Plugin URI: http://github.com/ksmandersen/dynamicmenus
+Plugin URI: http://github.com/ksmandersen/Dynamic-Wordpress-Menus/
 Description: Set the page menu for a nav location dynamically from the admin interface
 Version: 1.0
-Author URI: http://github.com/ksmandersen
+Author URI: http://github.com/ksmandersen/
 */
 
 // Require the Meta Box Script Class by RILWIS
