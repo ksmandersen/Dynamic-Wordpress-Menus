@@ -8,7 +8,7 @@ single page from within the admin interface in Wordpress.
 
 When activating the plugin a meta box will apear whenever editing a page like so:
 
-![metabox](screenshots/metabox.png)
+![metabox](https://github.com/ksmandersen/Dynamic-Wordpress-Menus/blob/master/screenshots/metabox.png?raw=true)
 
 You can then access the set menu in your theme like so:
 
