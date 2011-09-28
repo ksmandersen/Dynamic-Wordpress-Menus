@@ -12,7 +12,12 @@ Author URI: http://github.com/ksmandersen/
 // http://www.deluxeblogtips.com/meta-box-script-for-wordpress/
 require_once 'meta-box.php';
 
-// Get the available menu's registed in Wordpress Menu interface
+/**
+ * Get the available menu's registed in Wordpress Menu interface
+ *
+ * @return (array) Menu objects
+ * @author Kristian Andersen
+ **/
 function get_all_menus(){
     $r = array(0 => "");
     $menus = wp_get_nav_menus();
@@ -25,7 +30,15 @@ function get_all_menus(){
     return $r;
 }
 
-function get_menu_id($post_id) {
+/**
+ * Finds and returns the id for a menu defined for a page id.
+ * By default the function search parents if no menu is set fo
+ * the given page id.
+ *
+ * @return (int) id
+ * @author Kristian Andersen
+ **/
+function get_menu_id($post_id, $search_parents=true) {
 	// Return if not given a valid page id.
 	if($post_id <= 0)
 		return;
@@ -40,7 +53,7 @@ function get_menu_id($post_id) {
 	
 	// If no menu is set for the current page then go over all parents until a menu
 	// is found or there are no more parents.
-	if($menu_id <= 0) {
+	if($menu_id <= 0 && $search_parents) {
 		do {
 			$post = get_post($post->post_parent); // Get post for parent page
 			if($post == null)
@@ -54,20 +67,15 @@ function get_menu_id($post_id) {
 	return $menu_id;
 }
 
-// function get_menu_id($post) {
-// 	// Get the menu id for the current post (page).
-// 	$menu_id = get_post_meta($post->ID, 'dpm_page-menu-id', true);
-// 	
-// 	// If no menu id is defined for the current post then
-// 	// keep on searching in the parents.
-// 	do {
-// 		$menu_id = get_post_meta($post->post_parent, 'dpm_page-menu-id', true);
-// 	} while($menu_id <= 0 && $parent != 0);
-// 	
-// 	return $menu_id;
-// }
 
 // Register meta box for page
+
+/**
+ * Registers meta boxes on pages for setting the menu.
+ *
+ * @return void
+ * @author Kristian Andersen
+ **/
 function page_meta() {
 	$meta_box = array(
 		'id'			=> 'dpm_page-menu',
