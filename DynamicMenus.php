@@ -38,7 +38,7 @@ function get_all_menus(){
  * @return (int) id
  * @author Kristian Andersen
  **/
-function get_menu_id($post_id, $search_parents=true) {
+function get_menu_for_page($post_id, $search_parents=true) {
 	// Return if not given a valid page id.
 	if($post_id <= 0)
 		return;

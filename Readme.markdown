@@ -17,7 +17,7 @@ When activating the plugin a meta box will appear whenever editing a page like s
 You can then access the set menu in your theme like so:
 
 	// Get the ID of the set menu
-	$menu_id = get_menu_id($post->ID);
+	$menu_id = get_menu_for_page($post->ID);
 	
 	// print the menu if set
 	if($menu_id > 0)
@@ -26,7 +26,7 @@ You can then access the set menu in your theme like so:
 The plugin searches parent pages for set menus if no menu is set 
 by default. This can be disabled by calling the the function like so:
 
-	$menu_id = get_menu_id($post->ID, false);
+	$menu_id = get_menu_for_page($post->ID, false);
 
 	
 ## Licensing
